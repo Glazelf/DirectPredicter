@@ -4,6 +4,7 @@
   "description": "personal twitter testing garbage",
   "main": "index.js",
   "dependencies": {
+    "cron": "^1.8.2",
     "readline-sync": "^1.4.10",
     "twitter-lite": "^0.14.0"
   },
