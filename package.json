@@ -1,0 +1,24 @@
+{
+  "name": "directpredicter",
+  "version": "1.0.0",
+  "description": "personal twitter testing garbage",
+  "main": "index.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "twitter-lite": "^0.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glazelf/DirectPredicter.git"
+  },
+  "author": "Glaze",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/Glazelf/DirectPredicter/issues"
+  },
+  "homepage": "https://github.com/Glazelf/DirectPredicter#readme"
+}
