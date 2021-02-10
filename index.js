@@ -6,11 +6,6 @@ const Twitter = require('twitter-lite');
 const client = new Twitter(config);
 
 let tweetText = "A Nintendo Direct will be announced tomorrow";
-if (tweetText.length > 280) {
-    return console.log("Tweet body can only be 280 characters long.");
-} else if (tweetText.length < 1) {
-    return console.log("Tweet body has to be at least 1 character long.");
-};
 
 console.log("Awaiting cronjob...");
 
@@ -21,6 +16,13 @@ new cron.CronJob(time, async () => {
     tomorrow.setDate(today.getDate() + 1);
     let dateOutput = tomorrow.getDate() + '/' + (tomorrow.getMonth() + 1) + '/' + tomorrow.getFullYear();
     tweetText = `${tweetText} (${dateOutput}).`;
+
+    // Check body length
+    if (tweetText.length > 280) {
+        return console.log(`Tweet body can only be 280 characters long. (Current length: ${tweetText.length})`);
+    } else if (tweetText.length < 1) {
+        return console.log("Tweet body has to be at least 1 character long.");
+    };
 
     // Set body to an object
     let postBody = {
