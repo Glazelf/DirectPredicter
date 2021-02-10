@@ -1,7 +1,7 @@
-const config = require('./config.json');
 const cron = require("cron");
 const timezone = 'cest';
 const time = '00 00 20 * * *'; //Sec Min Hour, 8pm
+const config = require('./config.json');
 const Twitter = require('twitter-lite');
 const client = new Twitter(config);
 
