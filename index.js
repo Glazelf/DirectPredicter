@@ -12,7 +12,7 @@ if (tweetText.length > 280) {
     return console.log("Tweet body has to be at least 1 character long.");
 };
 
-console.log("Starting cronjob...");
+console.log("Awaiting cronjob...");
 
 new cron.CronJob(time, async () => {
     // Set body to an object
