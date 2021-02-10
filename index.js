@@ -1,11 +1,11 @@
 const cron = require("cron");
 const timezone = 'cest';
-const time = '00 00 20 * * *'; //Sec Min Hour, 8pm
+const time = '00 00 20 * * *'; // Sec Min Hour, 8pm
 const config = require('./config.json');
 const Twitter = require('twitter-lite');
 const client = new Twitter(config);
 
-let tweetText = "A Nintendo Direct will be announced tomorrow.";
+let tweetText = "A Nintendo Direct will be announced tomorrow";
 if (tweetText.length > 280) {
     return console.log("Tweet body can only be 280 characters long.");
 } else if (tweetText.length < 1) {
@@ -15,6 +15,13 @@ if (tweetText.length > 280) {
 console.log("Awaiting cronjob...");
 
 new cron.CronJob(time, async () => {
+    // Get the date
+    const today = new Date();
+    let tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+    let dateOutput = tomorrow.getDate() + '/' + (tomorrow.getMonth() + 1) + '/' + tomorrow.getFullYear();
+    tweetText = `${tweetText} (${dateOutput}).`;
+
     // Set body to an object
     let postBody = {
         'status': tweetText
