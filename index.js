@@ -5,11 +5,11 @@ const config = require('./config.json');
 const Twitter = require('twitter-lite');
 const client = new Twitter(config);
 
-let tweetText = "A Nintendo Direct will be announced tomorrow";
-
 console.log("Awaiting cronjob...");
 
 new cron.CronJob(time, async () => {
+    let tweetText = "A Nintendo Direct will be announced tomorrow";
+
     // Get the date
     const today = new Date();
     let tomorrow = new Date();
