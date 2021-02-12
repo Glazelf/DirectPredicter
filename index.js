@@ -32,6 +32,6 @@ new cron.CronJob(time, async () => {
     // Tweet
     client.post('statuses/update', postBody).catch(console.error).then(result => {
         // console.log(result);
-        console.log(`Successfully tweeted: "${result.text}"`);
+        console.log(`Tweeted: "${result.text}"`);
     });
 }, timeZone = timezone, start = true);
