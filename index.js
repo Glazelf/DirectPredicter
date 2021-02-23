@@ -11,7 +11,7 @@ new cron.CronJob(time, async () => {
     let tweetText = "A Nintendo Direct will be announced tomorrow";
 
     // Pokémon text
-    tweetTet = tweetText.replace("Nintendo", "Pokémon");
+    tweetText = tweetText.replace("Nintendo", "Pokémon");
 
     // Get the date
     const today = new Date();
