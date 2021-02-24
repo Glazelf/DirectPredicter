@@ -8,7 +8,7 @@ const client = new Twitter(config);
 
 console.log("Awaiting cronjob...");
 
-let nintendoText = "A Nintendo Direct will be announced tomorrow #NintendoDirect";
+let nintendoText = "A #NintendoDirect will be announced tomorrow";
 let pokemonText = nintendoText.replace("Nintendo", "Pokemon");
 
 // Send Nintendo direct prediction
