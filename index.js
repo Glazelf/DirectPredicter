@@ -2,6 +2,7 @@ const cron = require("cron");
 const timezone = 'cest';
 const timeNintendo = '00 00 20 * * *'; // Sec Min Hour, 8pm
 const timePokemon = '00 00 16 * * *'; // 4pm
+const timeSwitch = '00 00 9 * * *'; // 9am
 const config = require('./config.json');
 const Twitter = require('twitter-lite');
 const client = new Twitter(config);
@@ -10,6 +11,7 @@ console.log("Awaiting cronjob...");
 
 let nintendoText = "A #NintendoDirect will be announced tomorrow";
 let pokemonText = nintendoText.replace("Nintendo", "Pokemon");
+let switchText = "The #SwitchPro will be announced tomorrow";
 
 // Send Nintendo direct prediction
 new cron.CronJob(timeNintendo, async () => {
@@ -19,6 +21,10 @@ new cron.CronJob(timeNintendo, async () => {
 // Send Pokémon direct prediction
 new cron.CronJob(timePokemon, async () => {
     tweet(pokemonText);
+}, timeZone = timezone, start = true);
+
+new cron.CronJob(timeSwitch, async () => {
+    tweet(switchText);
 }, timeZone = timezone, start = true);
 
 // Tweet function
