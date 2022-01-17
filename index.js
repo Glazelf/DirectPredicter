@@ -16,16 +16,16 @@ let switchText = "The #SwitchPro will be announced tomorrow";
 // Send Nintendo direct prediction
 new cron.CronJob(timeNintendo, async () => {
     tweet(nintendoText);
-}, timeZone = timezone, start = true);
+}, timezone = timezone, start = true);
 
 // Send Pokémon direct prediction
 new cron.CronJob(timePokemon, async () => {
     tweet(pokemonText);
-}, timeZone = timezone, start = true);
+}, timezone = timezone, start = true);
 
 new cron.CronJob(timeSwitch, async () => {
     tweet(switchText);
-}, timeZone = timezone, start = true);
+}, timezone = timezone, start = true);
 
 // Tweet function
 function tweet(tweetText) {
