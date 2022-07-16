@@ -3,6 +3,5 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     assignees: ["glazelf"]
-    open-pull-requests-limit: 5
     schedule:
       interval: "daily"
