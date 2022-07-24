@@ -51,6 +51,11 @@ function tweet(tweetText) {
     // Tweet
     client.post('statuses/update', postBody).catch(console.error).then(result => {
         // console.log(result);
-        console.log(`Tweeted: "${result.text}"`);
+        if (result) {
+            console.log(`Tweeted: "${result.text}"`);
+        } else {
+            console.log("Tweet failed.");
+        };
+        return;
     });
 };
