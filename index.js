@@ -57,5 +57,5 @@ function tweet(tweetText) {
             console.log("Tweet failed.");
         };
         return;
-    });
+    }).catch(error => console.log(error));
 };
